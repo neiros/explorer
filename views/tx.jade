@@ -55,7 +55,8 @@ block content
         .col-md-6
           .panel.panel-default
             .panel-heading
-              strong #{settings.locale.tx_contributors}
+              - var txFee = tx.fee / 100000000
+              strong #{settings.locale.tx_contributors} (fee: #{txFee.toFixed(8)})
               span.glyphicon.glyphicon-arrow-right.pull-right.hidden-xs
             table.table.table-bordered.table-striped.summary-table 
               thead
